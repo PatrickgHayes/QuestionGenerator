@@ -1,19 +1,21 @@
-# char-rnn.pytorch
+# Question Generator
 
-A PyTorch implementation of [char-rnn](https://github.com/karpathy/char-rnn) for character-level text generation. This is copied from [the Practical PyTorch series](https://github.com/spro/practical-pytorch/blob/master/char-rnn-generation/char-rnn-generation.ipynb).
+A text generator for generating CLEVR style questions. Initially a character RNN. 
+This is copied from [the Practical PyTorch series](https://github.com/spro/practical-pytorch/blob/master/char-rnn-generation/char-rnn-generation.ipynb).
+
 
 ## Training
 
-Download [this Shakespeare dataset](https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt) (from the original char-rnn) as `shakespeare.txt`.  Or bring your own dataset &mdash; it should be a plain text file (preferably ASCII).
+Download the [CLEVR dataset](https://s3-us-west-1.amazonaws.com/clevr/CLEVR_v1.0_no_images.zip) without the images. We don't need any of the meta-data so the script in data cleaning scripts to remove all the meta-data. The result should be a file with one question on each line. 
 
 Run `train.py` with the dataset filename to train and save the network:
 
 ```
-> python train.py shakespeare.txt
+> python train.py CLEVR_questions.txt
 
 Training for 2000 epochs...
 (... 10 minutes later ...)
-Saved as shakespeare.pt
+Saved as CLEVR_questions.pt
 ```
 After training the model will be saved as `[filename].pt`.
 
@@ -39,13 +41,9 @@ Options:
 Run `generate.py` with the saved model from training, and a "priming string" to start the text with.
 
 ```
-> python generate.py shakespeare.pt --prime_str "Where"
+> python generate.py CLEVR_questions.pt --prime_str "H"
 
-Where, you, and if to our with his drid's
-Weasteria nobrand this by then.
-
-AUTENES:
-It his zersit at he
+How many metal cubes are there?
 ```
 
 ### Generation options
