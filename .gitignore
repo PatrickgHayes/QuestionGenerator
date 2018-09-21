@@ -1,0 +1,5 @@
+data/intermidiate_data/clean_questions.txt
+data/clean_data/CLEVR_questions.txt
+.idea
+data/source_data/CLEVR_train_questions.json
+.DS_store
