@@ -6,7 +6,7 @@ This is copied from [the Practical PyTorch series](https://github.com/spro/pract
 
 ## Training
 
-Download the [CLEVR dataset](https://s3-us-west-1.amazonaws.com/clevr/CLEVR_v1.0_no_images.zip) without the images. We don't need any of the meta-data so the script in data cleaning scripts to remove all the meta-data. The result should be a file with one question on each line. 
+Download the [CLEVR dataset](https://s3-us-west-1.amazonaws.com/clevr/CLEVR_v1.0_no_images.zip) without the images. We don't need any of the meta-data so use the script in data cleaning scripts to remove all the meta-data. The result should be a file with one question on each line. 
 
 Run `train.py` with the dataset filename to train and save the network:
 
